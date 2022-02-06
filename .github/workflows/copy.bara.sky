@@ -2,7 +2,7 @@ SOT_REPO = "git@github.com:emanb29/copy-main.git"
 SOT_BRANCH = "master"
 DESTINATION_REPO = "git@github.com:emanb29/copy-subset.git"
 DESTINATION_BRANCH = "master"
-COMMITTER = "Copybara Bot <bot@thatdot.com>"
+COMMITTER = "thatbot-copy[bot] <98922356+thatbot-copy[bot]@users.noreply.github.com>"
 LOCAL_SOT = "file:///usr/src/app"
 
 PUSH_INCLUDE = ["public/**",".github/workflows/copybara.yml",".github/workflows/copy.bara.sky"]

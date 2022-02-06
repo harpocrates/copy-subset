@@ -52,7 +52,7 @@ jobs:
           workflow: ${{ github.event.inputs.copybaraWorkflow }}
           ssh_key: ${{ secrets.COPYBARA_SSH_KEY }}
           access_token: ${{ steps.generate-token.outputs.token }}
-          committer: Copybara Bot <bot@thatdot.com> # INV: should match COMMITTER in copy.bara.sky -- this one is used for the commits, the one in there is used as a default author
+          committer: "thatbot-copy[bot] <98922356+thatbot-copy[bot]@users.noreply.github.com>" # INV: should match COMMITTER in copy.bara.sky -- this one is used for the commits, the one in there is used as a default author
           sot_branch: master
           sot_repo: emanb29/copy-main
           destination_repo: emanb29/copy-subset
