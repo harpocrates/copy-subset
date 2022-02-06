@@ -36,12 +36,12 @@ jobs:
         uses: tibdex/github-app-token@7ce9ffdcdeb2ba82b01b51d6584a6a85872336d4
         with:
           app_id: 169359 # thatBot Copy Application on thatBot account
+          private_key: ${{ secrets.THATBOT_COPY_KEY }}
       - name: Update cached Copybara docker image
         run: |
           docker run -d -p 5000:5000 --restart=always --name registry -v /tmp/docker-registry:/var/lib/registry registry:2 && npx wait-on tcp:5000
           docker pull localhost:5000/copybara:latest || docker pull public.ecr.aws/p0a2o6c9/copybara:latest
           docker tag public.ecr.aws/p0a2o6c9/copybara:latest localhost:5000/copybara:latest && docker push localhost:5000/copybara:latest || true
-          private_key: ${{ secrets.THATBOT_COPY_KEY }}
       - name: Copybara Action 2
         uses: Olivr/copybara-action@a0bb6a37362014a57421a6c8dec43fa1908dda06 #v1.2.3: verify action source code before updating
         with:
